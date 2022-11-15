@@ -24,7 +24,9 @@ const toLastNames = people => {
   //   }
   // })
 
-  return people.map(obj => `${obj.firstName} ${obj.lastName}`);
+  // return people.map(obj => `${obj.firstName} ${obj.lastName}`);
+  let newArr = people.map((item) => item.firstName + ' ' + item.lastName);
+  return newArr;
 };
 
 /* ------------------------------------------------------------------------------------------------
