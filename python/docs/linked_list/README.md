@@ -20,7 +20,7 @@ Returns: a string representing all the values in the Linked List, formatted as:
 
 ## Approach & Efficiency
  What approach did you take? Why? What is the Big O space/time for this approach?
-- I will give a section named sources where I got all the information for to complete this challenge. I also talked with Ricardo.
+- I will give a section named sources where I got all the information for to complete this challenge. Contributors: Ricardo
 
 ## Sources
 - https://www.geeksforgeeks.org/insertion-in-linked-list/?ref=lbp
