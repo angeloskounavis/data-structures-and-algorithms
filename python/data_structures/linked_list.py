@@ -10,6 +10,13 @@ class LinkedList:
         # initialization here
         self.head = None
 
+    def ____(self):
+        # initialization here
+        self.head = None
+
+    def __str__(self):
+        return "NULL"
+
     def insert(self, value):
         new_node = Node(value, self.head)
         self.head = new_node
