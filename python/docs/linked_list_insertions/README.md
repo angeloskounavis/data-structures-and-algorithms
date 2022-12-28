@@ -10,5 +10,6 @@ Insert before is looking forward to the current.next value
 Insert after compares target value vs current value
 
 ## Contributors:
-Ricardo Sotto
-Dennis Nichols
+Ricardo Sotto,
+Dennis Nichols,
+Tracy
