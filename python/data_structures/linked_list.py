@@ -5,17 +5,22 @@ class Node:
 
 
 class LinkedList:
-
+    """
+   A data structure that contains nodes that links/points to the next node in the list.
+    """
     def __init__(self):
         # initialization here
         self.head = None
 
-    def ____(self):
-        # initialization here
-        self.head = None
-
     def __str__(self):
-        return "NULL"
+        values = []
+        node = self.head
+        while node is not None:
+            values.append("{ " + str(node.value) + " }")
+            node = node.next
+        if len(values) == 0:
+            return "NULL"
+        return " -> ".join(values) + " -> NULL"
 
     def insert(self, value):
         new_node = Node(value, self.head)
@@ -28,7 +33,7 @@ class LinkedList:
                 return True
             node = node.next
         return False
-
+"""
     def to_string(self):
         values = []
         node = self.head
@@ -37,7 +42,19 @@ class LinkedList:
             node = node.next
         if len(values) == 0:
             return "NULL"
+"""
 
 
 class TargetError:
     pass
+
+
+
+
+
+
+
+
+
+
+
