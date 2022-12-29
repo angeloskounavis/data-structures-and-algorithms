@@ -3,92 +3,77 @@ class Node:
         self.value = value
         self.next = next
 
-    def __str__(self):
-        return f"{ {self.value} }"
-
 
 class LinkedList:
-    """
-   A data structure that contains nodes that links/points to the next node in the list.
-    """
     def __init__(self):
-        # initialization here
-        self.linked_list = []
         self.head = None
-        self.counter =0
-
-    def __str__(self):
-        values = []
-        node = self.head
-        while node is not None:
-            values.append("{ " + str(node.value) + " }")
-            node = node.next
-        if len(values) == 0:
-            return "NULL"
-        return " -> ".join(values) + " -> NULL"
 
     def insert(self, value):
-        new_node = Node(value, self.head)
-        self.head = new_node
-        self.counter += 1
+        self.head = Node(value, self.head)
 
     def includes(self, value):
-        node = self.head
-        while node is not None:
-            if node.value == value:
+        current = self.head
+        while current is not None:
+            if current.value == value:
                 return True
-            node = node.next
-            self.counter += 1
+            current = current.next
         return False
 
+    def __str__(self):
+        current = self.head
+        string = ""
+        while current is not None:
+            string += "{ " + str(current.value) + " } -> "
+            current = current.next
+        return string + "NULL"
+
     def append(self, value):
-        self.linked_list.append(Node(value))
-        self.counter += 1
+        current = self.head
+        while current.next is not None:
+            current = current.next
+        current.next = Node(value)
 
-    def insert_before(self, looking_for, value2):
-        old_list = []
-        if len(self.linked_list) > 0:
-            old_list = self.linked_list
-            self.linked_list = []
-        for node1 in old_list:
-            if node1.value == looking_for:
-                self.linked_list.append(Node(value2))
-            self.linked_list.append(node1)
-            self.counter += 1
+    def insert_before(self, before, value):
+        current = self.head
+        previous = None
+        try:
+            while current.value is not before:
+                previous = current
+                current = current.next
+            if previous is not None:
+                previous.next = Node(value, current)
+            if previous is None:
+                self.head = Node(value, current)
+        except Exception as e:
+            raise TargetError(e)
 
-    def insert_after(self, looking_for, value2):
-        old_list = []
-        if len(self.linked_list) > 0:
-            old_list = self.linked_list
-            self.linked_list = []
-        for node1 in old_list:
-            self.linked_list.append(node1)
-            if node1.value == looking_for:
-                self.linked_list.append(Node(value2))
-                self.counter += 1
+    def insert_after(self, after, value):
+        current = self.head
+        try:
+            while current.value is not after:
+                current = current.next
+            new_node = Node(value)
+            new_node.next = current.next
+            current.next = new_node
+        except Exception as e:
+            raise TargetError(e)
 
-    def kth_from_end(head, k):
-        current = head
-        while current
-"""
-    def to_string(self):
-        values = []
-        node = self.head
-        while node is not None:
-            values.append(str(node.value))
-            node = node.next
-        if len(values) == 0:
-            return "NULL"
-"""
-
-
-class TargetError:
-
-
-
+    def kth_from_end(self, k):
+        if k < 0:
+            raise TargetError()
+        current = self.head
+        ll_list = []
+        try:
+            while current is not None:
+                ll_list.append(current.value)
+                current = current.next
+            return ll_list[-k - 1]
+        except Exception as e:
+            raise TargetError(e)
 
 
-
+class TargetError(Exception):
+    pass
 
 
 
