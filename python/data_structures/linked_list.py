@@ -15,6 +15,7 @@ class LinkedList:
         # initialization here
         self.linked_list = []
         self.head = None
+        self.counter =0
 
     def __str__(self):
         values = []
@@ -29,6 +30,7 @@ class LinkedList:
     def insert(self, value):
         new_node = Node(value, self.head)
         self.head = new_node
+        self.counter += 1
 
     def includes(self, value):
         node = self.head
@@ -36,10 +38,12 @@ class LinkedList:
             if node.value == value:
                 return True
             node = node.next
+            self.counter += 1
         return False
 
     def append(self, value):
         self.linked_list.append(Node(value))
+        self.counter += 1
 
     def insert_before(self, looking_for, value2):
         old_list = []
@@ -50,6 +54,7 @@ class LinkedList:
             if node1.value == looking_for:
                 self.linked_list.append(Node(value2))
             self.linked_list.append(node1)
+            self.counter += 1
 
     def insert_after(self, looking_for, value2):
         old_list = []
@@ -60,6 +65,11 @@ class LinkedList:
             self.linked_list.append(node1)
             if node1.value == looking_for:
                 self.linked_list.append(Node(value2))
+                self.counter += 1
+
+    def kth_from_end(head, k):
+        current = head
+        while current
 """
     def to_string(self):
         values = []
@@ -73,7 +83,7 @@ class LinkedList:
 
 
 class TargetError:
-    pass
+
 
 
 
