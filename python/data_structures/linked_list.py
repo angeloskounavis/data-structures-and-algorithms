@@ -1,15 +1,17 @@
 class Node:
-    def __init__(self, value, next=None):
+    def __init__(self, value=None, next=None):
         self.value = value
         self.next = next
 
 
 class LinkedList:
-    def __init__(self):
-        self.head = None
+    def __init__(self, head=None):
+        self.head = head
 
     def insert(self, value):
-        self.head = Node(value, self.head)
+        new_node = Node(value)
+        new_node.next = self.head
+        self.head = new_node
 
     def includes(self, value):
         current = self.head
@@ -29,9 +31,12 @@ class LinkedList:
 
     def append(self, value):
         current = self.head
-        while current.next is not None:
-            current = current.next
-        current.next = Node(value)
+        if current is None:
+            self.head = Node(value, current)
+        else:
+            while current.next is not None:
+                current = current.next
+            current.next = Node(value)
 
     def insert_before(self, before, value):
         current = self.head
@@ -74,7 +79,6 @@ class LinkedList:
 
 class TargetError(Exception):
     pass
-
 
 
 
