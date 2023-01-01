@@ -16,7 +16,11 @@ Where the linked list is of a size 1
 
 ## Approach & Efficiency
  What approach did you take? Why? What is the Big O space/time for this approach?
+ linked-list-kth-2
 - Created a loop where it will take in the input lest say 2 and it will go at the tail and count to see how many places back that is
+
+- I will give a section named sources where I got all the information for to complete this challenge. Contributors: Ricardo, Jason
+ main
 
 
 ## Time it took to complete
