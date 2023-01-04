@@ -27,8 +27,8 @@ Time O(n): is linear because of the loop used
 space O(n): cause it will grow based on the input
 
 ## Contributors
-Ricardo, Jason, Aubrey
+Ricardo, Jason, Aubrey.
 
 ## Time it took to complete
-1 hour and a half
+2 hour and a half.
 
