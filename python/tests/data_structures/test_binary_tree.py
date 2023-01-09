@@ -1,5 +1,6 @@
 import pytest
 from data_structures.binary_tree import BinaryTree, Node
+import pytest
 
 
 
@@ -9,6 +10,7 @@ def test_exists():
 
 
 def test_pre_order(tree):
+
     actual = tree.pre_order()
     expected = ["a", "b", "d", "e", "c", "f", "g"]
     assert actual == expected
@@ -28,7 +30,7 @@ def test_post_order(tree):
     assert actual == expected
 
 
-
+@pytest.fixture
 def tree():
     """
           a
