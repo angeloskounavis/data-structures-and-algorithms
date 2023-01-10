@@ -7,10 +7,15 @@
 ## Whiteboard Process
 
 ![](./White Board.png)
+
 ## Approach & Efficiency
 
 #### Check if the tree is empty then If it is return none. If there are numbers though, look through the entire tree and find the highest value in the tree.
 
+##Contributors
+
+ #### Ricardo, Jason
+ 
 ## Solution
 
 #### pytest -k test_tree_max.py
