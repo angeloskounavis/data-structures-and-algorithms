@@ -27,11 +27,14 @@ class Queue:
     def dequeue(self):
         if self.front is None:
             raise InvalidOperationError
-        elif self.front:
+        if self.front == self.rear:
+            dequeued = self.front
+            self.front = self.rear = None
+            return dequeued.value
+        else:
             dequeued = self.front
             self.front = self.front.next
             return dequeued.value
-
     def peek(self):
         if self.front is None:
             raise InvalidOperationError("Method not allowed on empty collection")
